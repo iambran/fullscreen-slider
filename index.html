@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Slider</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <style>
+        *, *::before, *::after {margin: 0; padding: 0;}
+        .fullscreen-slider {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            transition: opacity 1s ease;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+        button {
+            position: absolute;
+            bottom: 0;
+            border: none;
+            font-size: 30px;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-around;
+        }
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 50px;
+            background-color: white;
+            cursor: pointer;
+        }
+        .left-btn {
+            margin-right: 2px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="fullscreen-slider">
+
+        <div class="slide active" style="background-image: url('1.jpg')"></div>
+        <div class="slide" style="background-image: url('2.jpg')"></div>
+        <div class="slide" style="background-image: url('3.jpg')"></div>
+
+        <button>
+            <span class="left-btn"><i class="fas fa-arrow-left"></i></span>
+            <span class="right-btn"><i class="fas fa-arrow-right"></i></span>
+        </button>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+</html>
